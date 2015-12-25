@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import "compass";
+// CompassのHTML5用リセットCSS読み込み
+@import "compass/reset";
+
+// ########################################################
+// 宣言
+// ########################################################
+// フォント
+@import url(https://fonts.googleapis.com/css?family=Limelight);
+$font-logo: 'Limelight', cursive;
+
+// 色
+$color-bg:rgb(255,255,255);
+$color-main:rgb(0,0,0);
+
+
+/*#########################################################
+
+レイアウト
+
+#########################################################*/
+
+/* ヘッダ */
+header {
+	width: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0; left: 0;
+	z-index: 100;
+	background-color:darken($color-main, 20%);
+	text-align: center;
+	@include transition(height 0.3s);
+
+	// サイトロゴ
+	h1#site-logo {
+		line-height: 2;
+		font-family: $font-logo;
+		font-size: 6rem;
+		color: $color-bg;
+		@include transition(all 0.3s);
+	}
+
+	// ヘッダのミニサイズ
+	&.smaller {
+		h1#site-logo {
+			font-size: 3rem;
+		}
+	}
+}
+
+/* メインカラム */
+#main {
+	background-color: $color-bg;
+	height: 20000px;
+}

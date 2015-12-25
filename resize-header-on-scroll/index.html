@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>smart</title>
+
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+	<h1 id="site-logo">smart</h1>
+</header>
+
+<main id="main">
+</main>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+function init() {
+	// スクロールして何ピクセルでアニメーションさせるか
+	var px_change	= 300;
+
+	// スクロールのイベントハンドラを登録
+	window.addEventListener('scroll', function(e){
+		// 変化するポイントまでスクロールしたらクラスを追加
+		if ( $(window).scrollTop() > px_change ) {
+			$("header").addClass("smaller");
+
+		// 変化するポイント以前であればクラスを削除
+		} else if ( $("header").hasClass("smaller") ) {
+			$("header").removeClass("smaller");
+		}
+	});
+}
+window.onload = init();
+</script>
+</body>
+</html>
